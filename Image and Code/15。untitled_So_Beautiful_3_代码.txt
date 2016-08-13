@@ -1,0 +1,8 @@
+>> clear
+>> [p,e,t]=initmesh('lshapeg','hmax',0.2);
+>> [p,e,t]=refinemesh('lshapeg',p,e,t);
+>> u = assempde('lshapeb',p,e,t,1,0,1);
+>> pdesurf(p,t,u)
+>> [p,e,t]=refinemesh('lshapeg',p,e,t);
+u = assempde('lshapeb',p,e,t,1,0,1);
+pdesurf(p,t,u)

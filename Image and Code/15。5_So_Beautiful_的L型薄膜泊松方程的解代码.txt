@@ -1,0 +1,14 @@
+>> clear
+>> [x,y,z]=peaks(6);
+mesh(x,y,z)
+title('原始数据')
+[xi,yi]=meshgrid(-3:0.2:3,-3:0.2:3);
+strmod={'nearest','linear','spline','cubic'};
+strlb = {'(a)nearest','(b)linear','(c)spline','(d)cubic'};
+figure
+for i = 1:4
+zi = interp2(x,y,z,xi,yi,strmod{i});
+subplot(2,2,i)
+mesh(xi,yi,zi);
+title(strlb{i})
+end
